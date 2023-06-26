@@ -1,2 +1,31 @@
-# formacaoaws4.0
-Projects of AWS Formation 4.0 course, from May, 2023.
+# Projetos em andamento, seja paciente.
+# Projects in development, please be pacient.
+
+## Scripts..
+
+Criar ambiente de desenvolvimento:
+
+Pacotes para instalar:
+
+
+Criar ECS com HA:
+
+Criar RDS:
+
+
+
+#### Version
+------------
+
+1.0
+
+#### Author
+------------
+ 
+ ***Joel Pinheiro** - *Github* - https://github.com/joelcpinheiro/
+
+#### License
+------------
+
+Use where you think you will contribute, I hope you enjoy.
+
