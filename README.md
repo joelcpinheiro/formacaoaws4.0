@@ -15,7 +15,7 @@ Semana 1:
 Desafio 1:
 
 RDS: Criando e configurando uma instância com PostgreSQL<br>
-RDS: Configurando permissões e se conectando ao <br>
+RDS: Configurando permissões e se conectando ao Banco<br>
 RDS: Gerenciando Backups e Snapshots<br>
 
 Desafio 2:
