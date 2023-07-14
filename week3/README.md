@@ -22,7 +22,7 @@ aws configure --profile bia
 ##### Create a new database PostgreSQL, db.t3.micro, 20gb storage, turn off performance insights and set the bia-db security group;
 > Save the PostgreSQL password in a safe place.
 ##### Create a new ECR repo called bia;
-##### Build the container imaqge and send to ECR repository
+##### Build the container imaqge and send to ECR repository;
 
 
 ### Challenge 2 steps:
