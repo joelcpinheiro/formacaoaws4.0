@@ -2,8 +2,6 @@
 
 ### Challenge 1 steps:
 
-
-
 ### Challenge 2 steps:
 
 
