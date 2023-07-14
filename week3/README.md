@@ -23,6 +23,8 @@ aws configure --profile bia
 > Save the PostgreSQL password in a safe place.
 ##### Create a new ECR repo called bia;
 ##### Build the container imaqge and send to ECR repository;
+##### Prepare build.sh and deploy.sh:
+
 
 
 ### Challenge 2 steps:
