@@ -6,7 +6,12 @@
 git clone https://github.com/henrylle/bia.git .
 ```
 ##### Run file rodar_app_local_unix.sh, this will be install a new database and other node commands after build the appropriated container image.
+##### Create a new AWS User called dev wih the following attached policies:
 
+```sh
+AmazonEC2ContainerRegistryFullAccess
+AmazonECSFullAccess
+```
 
 ### Challenge 2 steps:
 
