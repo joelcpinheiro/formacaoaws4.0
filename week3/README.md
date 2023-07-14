@@ -24,6 +24,9 @@ aws configure --profile bia
 ##### Create a new ECR repo called bia;
 ##### Build the container imaqge and send to ECR repository;
 ##### Prepare build.sh and deploy.sh:
+##### Execute build.sh
+##### Execute deploy.sh 
+
 
 
 
