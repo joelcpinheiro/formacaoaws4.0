@@ -17,6 +17,8 @@ AmazonECSFullAccess
 aws configure --profile bia
 ```
 
+
+
 ### Challenge 2 steps:
 
 ### Challenge 3 steps:
