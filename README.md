@@ -8,6 +8,8 @@
 
 git;<br>
 aswcli;<br>
+docker;<br>
+docker-compose;<br>
 
 ### Desafios:
 
