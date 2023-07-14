@@ -16,7 +16,9 @@ AmazonECSFullAccess
 ```sh
 aws configure --profile bia
 ```
-
+##### Create a new security group called bia-web with inbound to 80(ALL) and 22(YOURSELF) port, and bia-db with inbound to 5432 port and allow only bia-web security group.
+##### Create a new database PostgreSQL, db.t3.micro, 20gb storage, turn off performance insights and set the bia-db security group.
+PS. Save the PostgreSQL password in a safe place.
 
 
 ### Challenge 2 steps:
