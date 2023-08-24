@@ -19,10 +19,11 @@ AmazonECSFullAccess
 aws configure --profile bia
 ```
 ##### Create a new security group called bia-web with inbound to 80(ALL) and 22(YOURSELF) port, and bia-db with inbound to 5432 port and allow only bia-web security group;
-##### Create a new database PostgreSQL, db.t3.micro, 20gb storage, turn off performance insights and set the bia-db security group;
+##### Create a new free tier database PostgreSQL(please use standard mode), db.t3.micro, 20gb storage, turn off performance insights and set the bia-db security group;
 > Save the PostgreSQL password in a safe place.
+> Disable::: Enable Storage Autoscaling, Performance Insigts. 
 ##### Create a new ECR repo called bia;
-##### Build the container imaqge and send to ECR repository;
+##### Build the container image using docker-compose file cloned above, and send to ECR repository;
 ##### Prepare build.sh and deploy.sh:
 ##### Execute build.sh
 ##### Execute deploy.sh 
