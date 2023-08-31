@@ -1,5 +1,5 @@
-resource "aws_security_group" "bia-alb" {
-  name        = "bia-alb"
+resource "aws_security_group" "bia-alb-teste" {
+  name        = "bia-alb-teste"
   description = "Allow Access BIA ALB"
   ingress {
     description = "Allow HTTP traffic on port 80"
@@ -24,16 +24,15 @@ resource "aws_security_group" "bia-alb" {
   }
 }
 
-resource "aws_security_group" "bia-ec2" {
-  name        = "bia-ec2"
+resource "aws_security_group" "bia-ec2-teste" {
+  name        = "bia-ec2-teste"
   description = "Allow Access BIA from EC2"
   ingress {
     description = "Allow HTTP traffic from ec2 instances from ECS"
     from_port   = 0
     to_port     = 0
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-    security_group_id        = aws_security_group.bia-alb.id
+    security_groups  = [aws_security_group.bia-alb-teste.id]
   }
 
   egress {

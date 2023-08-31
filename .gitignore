@@ -1,5 +1,4 @@
-.terraform/*
-terraform.tfstate
-terraform.tfstate.backup
-.terraform.lock.hcl
-
+week3/challenge1/.terraform/*
+week3/challenge1/terraform.tfstate
+week3/challenge1/terraform.tfstate.backup
+week3/challenge1/.terraform.lock.hcl
