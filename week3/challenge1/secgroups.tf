@@ -42,3 +42,26 @@ resource "aws_security_group" "bia-ec2-teste" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+
+resource "aws_security_group" "bia-db" {
+  name        = "bia-db"
+  description = "Allow Access EC2 instances from ECS to PostGreSQL database"
+  ingress {
+    description = "Allow traffic"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "tcp"
+    security_groups  = [aws_security_group.bia-ec2-teste.id]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+
+
