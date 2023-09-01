@@ -23,6 +23,7 @@ aws configure --profile bia
 > Save the PostgreSQL password in a safe place.
 > Disable::: Enable Storage Autoscaling, Performance Insigts. 
 ##### Create a new ECR repo called bia;
+##### Execute terraform code to deploy a New ECS;
 ##### Build the container image using Dockerfile cloned above, and push to ECR repository;
 ##### Prepare build.sh and deploy.sh file according to your necessity;
 ##### Execute build.sh file;
@@ -30,9 +31,5 @@ aws configure --profile bia
 
 
 
-
-### Challenge 2 steps:
-
-### Challenge 3 steps:
 
 
