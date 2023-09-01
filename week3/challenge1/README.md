@@ -22,12 +22,21 @@ aws configure --profile bia
 ##### Create a new free tier database PostgreSQL(please use standard mode), db.t3.micro, 20gb storage, turn off performance insights and set the bia-db security group;
 > Save the PostgreSQL password in a safe place.
 > Disable::: Enable Storage Autoscaling, Performance Insigts. 
-##### Create a new ECR repo called bia;
+##### Create a new private repository on ECR called bia;
 ##### Execute terraform code to deploy a New ECS;
-##### Build the container image using Dockerfile cloned above, and push to ECR repository;
-##### Prepare build.sh and deploy.sh file according to your necessity;
-##### Execute build.sh file;
-##### Execute deploy.sh file;
+##### Build the container image using Dockerfile cloned above, and push to ECR repository, see the example below:
+```sh
+aws ecr get-login-password --region us-east-1 --profile [YOUR_PROFILE] | docker login --username AWS --password-stdin [YOUR_ECR]
+docker build -t bia .
+docker tag bia:latest [YOUR_ECR]/bia:latest
+docker push [YOUR_ECR]/bia:latest
+```
+
+##### Create a new file called deploy.sh to update the ECS:
+```sh
+aws ecs update-service --cluster [CLUSTER NAME] --service [SERVICE NAME]  --force-new-deployment --profile [YOUR_PROFILE]
+
+```
 
 
 
