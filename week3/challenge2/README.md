@@ -31,6 +31,9 @@ And finally, click on <b>create database</b> button.
 Don't forget to save your database password in a safe place.
 
 #### 4.Create a new ECS Cluster with these config:
+Before you need to create a new IAM role named role-ecs-td-efs:      
+Select Elastic Container Service Task and attach permission policy ```AmazonElasticFileSystemClientReadWriteAccess```.
+
 <b>At ECS, click on Create Cluster:</b>     
 Select cluster template, choose <b>EC2 Linux + Networking</b> option;       
 <b>Cluster name</b>:cluster-lab-epsecial-wordpress;     
@@ -44,14 +47,18 @@ And finally, click on <b>create</b> button;
 
 Create a new <b>Task Definition</b> 
 Select launch type compatibility:EC2;       
-<b>Task definition name</b>:task-def-lab-wordpress;     
+<b>Task definition name</b>: task-def-lab-wordpress;
+<b>Task role:</b> role-ecs-td-efs     
 Click on <b>Add container</b> button with these info:       
 <b>Container name:</b> wordpress;               
-<b>Image:</b>wordpress:latest;      
+<b>Image:</b> wordpress:latest;      
 <b>Memory Limit(Mib):<b>Soft limit: 400;        
-
-
-
-
-
+<b>Port Mappings</b>: Host port 0, and Container port 80 tcp;     
+<b>Create these Env variables:</b>      
+WORDPRESS_DB_HOST   
+WORDPRESS_DB_USER   
+WORDPRESS_DB_PASSWORD      
+WORDPRESS_DB_NAME   
+On <b>Volumes</b>, click on <b>Add volume</b> option, named efs-lab-especial-wordpress, with Volume type <b>EFS</b>, File System ID, select the EFS created before, Root directory: /, mark Encryption in transit and EFS IAM authorization, click on Add button.
+Back to container definitions and go to <b>Storage and logging</b>, In Mount points, choose the EFS created before with the container path ```/var/www/html```.
 
