@@ -10,14 +10,16 @@ SG:
 <b>alb-wp</b>(Inbound 80 and 443 ports);     
 <b>db-wp</b>(Inbound 3306 port from ec2-wp).
 
-#### 2.Create a new EFS with these config:
+#### 2.Create a new Load Balance called tg-wordpress with HTTP
+
+#### 3.Create a new EFS with these config:
 <b>Name</b>: lab-especial-wordpress        
 <b>Availability and Durability</b>: Regional       
 <b>Performance Mode</b>: General Purpose       
 <b>Througputh Mode</b>: Bursting       
 At Network Access, allow all AZs to SG efs-from-ec2-wp;     
 
-#### 3.Create a new MySQL database with these config:
+#### 4.Create a new MySQL database with these config:
 <b>MySQL</b> Database, version 5.7.34;      
 <b>Template</b> of type free tier;      
 <b>Database Name</b> lab-especial;      
@@ -30,7 +32,7 @@ At Network Access, allow all AZs to SG efs-from-ec2-wp;
 And finally, click on <b>create database</b> button.        
 Don't forget to save your database password in a safe place.
 
-#### 4.Create a new ECS Cluster with these config:
+#### 5.Create a new ECS Cluster with these config:
 Before you need to create a new IAM role named role-ecs-td-efs:      
 Select Elastic Container Service Task and attach permission policy ```AmazonElasticFileSystemClientReadWriteAccess```.
 
@@ -61,4 +63,13 @@ WORDPRESS_DB_PASSWORD
 WORDPRESS_DB_NAME   
 On <b>Volumes</b>, click on <b>Add volume</b> option, named efs-lab-especial-wordpress, with Volume type <b>EFS</b>, File System ID, select the EFS created before, Root directory: /, mark Encryption in transit and EFS IAM authorization, click on Add button.
 Back to container definitions and go to <b>Storage and logging</b>, In Mount points, choose the EFS created before with the container path ```/var/www/html```.
+
+Create a new <b>service</b> with these options:     
+Launch type <b>EC2</b>;     
+Service name: <b>service-lab-wordpress</b>;     
+Service type: REPLICA;      
+Number of tasks: 2
+Min healthy percent: 100
+Max percent: 200
+
 
