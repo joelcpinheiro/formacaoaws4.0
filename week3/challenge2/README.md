@@ -77,10 +77,10 @@ Min healthy percent: 100;
 Max percent: 200;       
 Choose Load balancer type to <b>Application Load Balancer</b>;      
 Service IAM role: AWSServiceRoleForECS;     
-Load balancer name: alb-bia
+Load balancer name: alb-bia     
 And finally, click on <b>Create Service</b> button.
 
-
-
+<b>TIPS:</b>
+Edit Target Group attibutes, changing the delay of deregistration to 30 seconds, default is 300 and, this is a lot of time to wait :P.
 
 
