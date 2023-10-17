@@ -78,7 +78,7 @@ Max percent: 200;
 Choose Load balancer type to <b>Application Load Balancer</b>;      
 Service IAM role: AWSServiceRoleForECS;     
 Load balancer name: alb-bia
-
+And finally, click on <b>Create Service</b> button.
 
 
 
