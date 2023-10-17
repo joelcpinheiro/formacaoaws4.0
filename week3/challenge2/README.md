@@ -2,6 +2,8 @@
 
 ### Challenge 2 steps:
 
+#### 1.Create a new target group to run on 80 port called tg-wordpress, with 200,301 and, 302 at status code option.
+
 #### 1.Create two new Security Groups with these conditions:
 
 SG: 
@@ -68,8 +70,13 @@ Create a new <b>service</b> with these options:
 Launch type <b>EC2</b>;     
 Service name: <b>service-lab-wordpress</b>;     
 Service type: REPLICA;      
-Number of tasks: 2
-Min healthy percent: 100
-Max percent: 200
+Number of tasks: 2;
+Min healthy percent: 100;        
+Max percent: 200;       
+
+
+
+
+
 
 
