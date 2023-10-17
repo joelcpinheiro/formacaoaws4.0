@@ -80,7 +80,7 @@ Service IAM role: AWSServiceRoleForECS;
 Load balancer name: alb-bia     
 And finally, click on <b>Create Service</b> button.
 
-<b>TIPS:</b>
+<b>TIPS:</b>        
 Edit Target Group attibutes, changing the delay of deregistration to 30 seconds, default is 300 and, this is a lot of time to wait :P.
 
 
