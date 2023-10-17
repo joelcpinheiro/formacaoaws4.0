@@ -2,9 +2,10 @@
 
 ### Challenge 2 steps:
 
-#### 1.Create a new target group to run on 80 port called tg-wordpress, with 200,301 and, 302 at status code option.
+#### 1.Create a new target group called tg-wordpress:
+Running on 80 port, with 200,301 and, 302 at status code option.
 
-#### 1.Create two new Security Groups with these conditions:
+#### 2.Create two new Security Groups with these conditions:
 
 SG: 
 <b>efs-from-ec2-wp</b>(Inbound Port NFS to ec2-wp group);      
@@ -12,16 +13,16 @@ SG:
 <b>alb-wp</b>(Inbound 80 and 443 ports);     
 <b>db-wp</b>(Inbound 3306 port from ec2-wp).
 
-#### 2.Create a new Load Balance called tg-wordpress with HTTP
+#### 3.Create a new Load Balance called tg-wordpress with HTTP
 
-#### 3.Create a new EFS with these config:
+#### 4.Create a new EFS with these config:
 <b>Name</b>: lab-especial-wordpress        
 <b>Availability and Durability</b>: Regional       
 <b>Performance Mode</b>: General Purpose       
 <b>Througputh Mode</b>: Bursting       
 At Network Access, allow all AZs to SG efs-from-ec2-wp;     
 
-#### 4.Create a new MySQL database with these config:
+#### 5.Create a new MySQL database with these config:
 <b>MySQL</b> Database, version 5.7.34;      
 <b>Template</b> of type free tier;      
 <b>Database Name</b> lab-especial;      
@@ -34,7 +35,7 @@ At Network Access, allow all AZs to SG efs-from-ec2-wp;
 And finally, click on <b>create database</b> button.        
 Don't forget to save your database password in a safe place.
 
-#### 5.Create a new ECS Cluster with these config:
+#### 6.Create a new ECS Cluster with these config:
 Before you need to create a new IAM role named role-ecs-td-efs:      
 Select Elastic Container Service Task and attach permission policy ```AmazonElasticFileSystemClientReadWriteAccess```.
 
