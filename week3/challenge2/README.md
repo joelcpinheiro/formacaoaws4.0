@@ -30,8 +30,8 @@ At Network Access, allow all AZs to SG efs-from-ec2-wp;
 <b>Auto Generate Password</b>;      
 <b>DB Instance class</b>:db.t2.micro;       
 <b>Allocated storage</b> 20GB;      
-<b>VPC Default</b>;
-<b>Initial Database Name:</b>wordpress;     
+<b>VPC Default</b>;     
+<b>Initial Database Name: </b>wordpress;     
 <b>Backup retention period:</b>1 day;       
 And finally, click on <b>create database</b> button.        
 Don't forget to save your database password in a safe place.
