@@ -38,7 +38,7 @@ Don't forget to save your database password in a safe place.
 
 #### 7.Create a new ECS Cluster with these config:
 Before you need to create a new IAM role named role-ecs-td-efs:      
-Select Elastic Container Service Task and attach permission policy ```AmazonElasticFileSystemClientReadWriteAccess```.
+Select Elastic Container Service Task and attach the permission policy called  ```AmazonElasticFileSystemClientReadWriteAccess```.
 
 <b>At ECS, click on Create Cluster:</b>     
 Select cluster template, choose <b>EC2 Linux + Networking</b> option;       
