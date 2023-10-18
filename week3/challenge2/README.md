@@ -7,8 +7,6 @@ I created my own domain called joelpinheiro.cloud and set up on Route 53, specif
 I Added the subdomain wordpress.joelpinheiro.cloud pointing to Load Balancer created on step 2.     
 
 
-
-
 #### 1.Create a new target group called tg-wordpress:
 Running on 80 port, with 200,301 and, 302 at status code option.
 
