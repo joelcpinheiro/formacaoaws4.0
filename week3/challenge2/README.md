@@ -2,9 +2,22 @@
 
 ### Challenge 2 steps:
 
+#### Requisites:        
+I created my own domain called joelpinheiro.cloud and set up on Route 53, specificaly on Hosted Zones session.
+I Added the subdomain wordpress.joelpinheiro.cloud pointing to Load Balancer created on step 2.     
+
+
+
+
 #### 1.Create a new target group called tg-wordpress:
 Running on 80 port, with 200,301 and, 302 at status code option.
-#### 2.Create a new Load Balancer called alb-bia:
+
+#### 2.Create a new Load Balancer of type ```Application Load Balancer``` called alb-bia, with these configurations:        
+Scheme: Internet-facing;        
+Security Group: bia-alb;                
+VPC: Default;       
+Availability Zones: All subnets available;      
+Add a new HTTPS Listener appointing to a target list created on step 1 and, choose the Certificate created on ACM(AWS Certificate Manager).     
 
 #### 3.Create two new Security Groups with these conditions:
 
@@ -67,7 +80,8 @@ WORDPRESS_DB_USER
 WORDPRESS_DB_PASSWORD      
 WORDPRESS_DB_NAME   
 ```
-On <b>Volumes</b>, click on <b>Add volume</b> option, named efs-lab-especial-wordpress, with Volume type <b>EFS</b>, File System ID, select the EFS created before, Root directory: /, mark Encryption in transit and EFS IAM authorization, click on Add button.
+On <b>Volumes</b>, click on <b>Add volume</b> option type efs-lab-especial-wordpress, with Volume type <b>EFS</b>
+File System ID, select the EFS created before, Root directory: /, mark Encryption in transit and EFS IAM authorization, click on Add button.
 Back to container definitions and go to <b>Storage and logging</b>, In Mount points, choose the EFS created before with the container path ```/var/www/html```.
 
 Create a new <b>service</b> with these options:     
