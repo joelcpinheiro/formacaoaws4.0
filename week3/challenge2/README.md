@@ -53,18 +53,20 @@ And finally, click on <b>create</b> button;
 
 Create a new <b>Task Definition</b> 
 Select launch type compatibility:EC2;       
-<b>Task definition name</b>: task-def-lab-wordpress;
+<b>Task definition name</b>: task-def-lab-wordpress;        
 <b>Task role:</b> role-ecs-td-efs     
 Click on <b>Add container</b> button with these info:       
 <b>Container name:</b> wordpress;               
 <b>Image:</b> wordpress:latest;      
-<b>Memory Limit(Mib):<b>Soft limit: 400;        
+<b>Memory Limit(Mib):</b>Soft limit: 400;        
 <b>Port Mappings</b>: Host port 0, and Container port 80 tcp;     
 <b>Create these Env variables:</b>      
+```
 WORDPRESS_DB_HOST   
 WORDPRESS_DB_USER   
 WORDPRESS_DB_PASSWORD      
 WORDPRESS_DB_NAME   
+```
 On <b>Volumes</b>, click on <b>Add volume</b> option, named efs-lab-especial-wordpress, with Volume type <b>EFS</b>, File System ID, select the EFS created before, Root directory: /, mark Encryption in transit and EFS IAM authorization, click on Add button.
 Back to container definitions and go to <b>Storage and logging</b>, In Mount points, choose the EFS created before with the container path ```/var/www/html```.
 
