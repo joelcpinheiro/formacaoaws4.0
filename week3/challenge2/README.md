@@ -96,5 +96,5 @@ And finally, click on <b>Create Service</b> button.
 
 <b>TIPS:</b>        
 Edit Target Group attibutes, changing the delay of deregistration to 30 seconds, default is 300 and, this is a lot of time to wait :P.
-
+Other thing that on step 7, actually you can see just one instance, you can increase one  more instance, changing the number of Auto Scaling Group on desired and maximum capacity to 2.
 

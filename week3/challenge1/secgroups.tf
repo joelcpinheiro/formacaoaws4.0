@@ -28,11 +28,11 @@ resource "aws_security_group" "bia-ec2-teste" {
   name        = "bia-ec2-teste"
   description = "Allow Access BIA from EC2"
   ingress {
-    description = "Allow HTTP traffic from ec2 instances from ECS"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "tcp"
-    security_groups  = [aws_security_group.bia-alb-teste.id]
+    description     = "Allow HTTP traffic from ec2 instances from ECS"
+    from_port       = 0
+    to_port         = 0
+    protocol        = "tcp"
+    security_groups = [aws_security_group.bia-alb-teste.id]
   }
 
   egress {
@@ -44,15 +44,15 @@ resource "aws_security_group" "bia-ec2-teste" {
 }
 
 
-resource "aws_security_group" "bia-db" {
-  name        = "bia-db"
+resource "aws_security_group" "bia-db-teste" {
+  name        = "bia-db-teste"
   description = "Allow Access EC2 instances from ECS to PostGreSQL database"
   ingress {
-    description = "Allow traffic"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "tcp"
-    security_groups  = [aws_security_group.bia-ec2-teste.id]
+    description     = "Allow traffic"
+    from_port       = 0
+    to_port         = 0
+    protocol        = "tcp"
+    security_groups = [aws_security_group.bia-ec2-teste.id]
   }
 
   egress {
